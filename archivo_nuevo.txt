@@ -1,0 +1,4 @@
+Esto se escribe en el archivo
+Esto tambien
+Mira, puedo escribir"comillas"
+Gracias a la diagonal invertida: 
