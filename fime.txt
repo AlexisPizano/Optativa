@@ -1,6 +1,31 @@
-Esto se escribe en el archivo
-Este tambien
-Mira, puedo escribir"comillas"
-Gracias a la diagonal invertida: 
-Esta cara la gasolina
-Estar cansado mientras manejas es malo
+Los iPhone son una línea de teléfonos inteligentes diseñados y comercializados por Apple Inc. 
+Son conocidos por su elegante diseño, potentes características y su sistema operativo iOS, que 
+ofrece una experiencia de usuario intuitiva y fluida. A lo largo de los años, Apple ha lanzado 
+múltiples modelos de iPhone, desde el original en 2007 hasta los más recientes en la serie iPhone 13. 
+Cada nuevo lanzamiento suele traer consigo mejoras en rendimiento, cámara, pantalla y funcionalidades 
+innovadoras. Los iPhone también son conocidos por su integración con otros dispositivos de Apple, 
+como los iPad, Mac y Apple Watch, lo que permite una experiencia de ecosistema cohesiva para los 
+usuarios de Apple. Además, la App Store ofrece una amplia gama de aplicaciones diseñadas específicamente 
+para estos dispositivos, lo que amplía aún más su funcionalidad y versatilidad. En resumen, los 
+iPhone son dispositivos emblemáticos que combinan estilo, rendimiento y un ecosistema sólido 
+para ofrecer una experiencia de usuario completa.
+
+Los iPhone, desarrollados por Apple Inc., son una línea de teléfonos inteligentes reconocidos mundialmente 
+por su diseño distintivo, rendimiento excepcional y el ecosistema integrado que ofrece a los usuarios. 
+Desde el lanzamiento del primer iPhone en 2007, Apple ha continuado innovando con cada nueva generación 
+de dispositivos.
+
+En términos de diseño, los iPhone se caracterizan por su elegancia y calidad de construcción. 
+Utilizan materiales premium como aluminio y vidrio, y sus diseños son minimalistas y estéticamente 
+atractivos. Apple pone un énfasis considerable en la ergonomía y la experiencia táctil, lo que 
+resulta en dispositivos que se sienten cómodos y naturales en la mano del usuario.
+
+En cuanto al sistema operativo, los iPhone ejecutan iOS, que es exclusivo de los dispositivos 
+de Apple. iOS se destaca por su interfaz intuitiva y fluida, así como por su robusta seguridad 
+y privacidad. Apple ofrece actualizaciones regulares de software para garantizar que los usuarios 
+tengan acceso a las últimas características y mejoras de seguridad.
+
+Los iPhone son conocidos por su potente rendimiento. Incorporan procesadores Apple diseñados 
+específicamente, como la serie A Bionic, que ofrecen un rendimiento rápido y eficiente en términos 
+de energía. Esto se traduce en una experiencia de usuario sin interrupciones, incluso al ejecutar 
+aplicaciones exigentes o multitarea intensiva.
