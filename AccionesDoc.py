@@ -1,13 +1,21 @@
+import os
 import docx2txt
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk.probability import FreqDist
 
-# Ruta del archivo .docx
-ruta_archivo = "Respeto.docx"
+while True:
+    # Solicitar al usuario el nombre del documento de Word
+    nombre_documento = input("Ingrese el nombre del documento de Word (.docx): ")
+
+    # Verificar si el archivo existe
+    if not os.path.isfile(nombre_documento):
+        print("El documento", nombre_documento, "no existe. Por favor, ingrese otro nombre de documento.")
+    else:
+        break
 
 # Extraer el texto del archivo .docx
-texto_docx = docx2txt.process(ruta_archivo)
+texto_docx = docx2txt.process(nombre_documento)
 
 # Guardar el texto extraído en un archivo de texto
 with open("texto_archivo.txt", "w", encoding="utf-8") as archivo:
