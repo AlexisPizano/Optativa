@@ -1,0 +1,35 @@
+import openai
+
+# Configura tu clave de API de OpenAI
+openai.api_key = 'sk-mJVd27dnkfmqN9vlwdFfT3BlbkFJivW0iL2q9AgvI0ykH85Fhola'
+
+# Función para enviar una solicitud de chat a ChatGPT
+def enviar_solicitud_chat(mensaje):
+    # Utiliza un modelo alternativo, por ejemplo, text-davinci-002
+    respuesta = openai.Completion.create(
+        engine='text-davinci-002',
+        prompt=mensaje,
+        max_tokens=50,
+        temperature=0.7
+    )
+    return respuesta.choices[0].text.strip()
+
+# Función para interactuar con el usuario
+def interactuar():
+    print("¡Bienvenido al ChatGPT!")
+    print("Puedes comenzar a escribir tus mensajes. Escribe 'salir' para terminar la conversación.")
+    print("-----------------------------------------")
+
+    # Loop de interacción
+    while True:
+        mensaje = input("Usuario: ")
+        
+        if mensaje.lower() == 'salir':
+            break
+
+        respuesta = enviar_solicitud_chat(mensaje)
+        print("ChatGPT: " + respuesta)
+        print("-----------------------------------------")
+
+# Ejecutar la función de interacción
+interactuar()
