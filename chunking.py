@@ -1,75 +1,50 @@
 import nltk
-from nltk import word_tokenize, pos_tag, ne_chunk
 from nltk.chunk import RegexpParser
+from nltk.tokenize import word_tokenize
+from nltk import pos_tag, ne_chunk
+from nltk.tree import Tree
 
-# Descargar recursos necesarios de nltk
+# Descargar recursos necesarios de NLTK
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 nltk.download('maxent_ne_chunker')
 nltk.download('words')
 
-# Ejemplo de texto
-texto = "El gato negro se sentó en el tejado y miró la luna llena mientras el perro ladraba. John Doe vive en Nueva York."
+# Texto de ejemplo
+text = "Alexis juega xbox con sus amigos en la noche"
 
-# Tokenización de palabras
-tokens = word_tokenize(texto)
+# Tokenización y etiquetado POS (Part-Of-Speech Tagging)
+tokens = word_tokenize(text)
+tagged = pos_tag(tokens)
 
-# Etiquetado POS (Part of Speech)
-etiquetas_pos = pos_tag(tokens)
-
-# Definir el patrón de chunking para diversas frases gramaticales
-patrones = """
-    NP: {<DT>?<JJ>*<NN.*>}         # Frase nominal
-    VP: {<VB.*><NP|PP|CLAUSE>+$}   # Frase verbal
-    PP: {<IN><NP>}                 # Frase preposicional
-    ADJP: {<JJ><CC>?<JJ>*}         # Frase adjetival
-    ADVP: {<RB.*>}                 # Frase adverbial
-    CLAUSE: {<NP><VP>}             # Oración
+# Definición de la gramática para el chunking
+# NP: Noun Phrases
+# VP: Verb Phrases
+grammar = """
+    NP: {<DT>?<JJ>*<NN.*>}
+    VP: {<VB.*><NP|PP|CLAUSE>+$}
+    CLAUSE: {<NP><VP>}
 """
 
-# Crear el analizador de expresiones regulares para chunking
-analizador_chunking = RegexpParser(patrones)
+# Creación del parser
+parser = RegexpParser(grammar)
 
-# Aplicar el chunking al texto etiquetado
-resultado_chunking = analizador_chunking.parse(etiquetas_pos)
+# Aplicación del parser para obtener los chunks
+result = parser.parse(tagged)
 
-# Imprimir el resultado del chunking
-print("Resultado del chunking:")
-print(resultado_chunking)
+# Mostrar los chunks identificados
+print("Chunks identificados (frases sustantivas y verbales):")
+print(result)
 
-# Dibujar el árbol resultante del chunking (opcional)
-resultado_chunking.draw()
+# Visualización de los chunks
+result.draw()
 
-# Función para extraer y mostrar los chunks de cada tipo
-def mostrar_chunks(chunked_sentence, etiqueta_tipo):
-    for subtree in chunked_sentence.subtrees():
-        if subtree.label() == etiqueta_tipo:
-            print(' '.join(word for word, tag in subtree.leaves()))
+# Identificación de entidades nombradas usando ne_chunk
+ner_chunks = ne_chunk(tagged)
 
-print("\nFrases nominales (NP):")
-mostrar_chunks(resultado_chunking, 'NP')
-
-print("\nFrases verbales (VP):")
-mostrar_chunks(resultado_chunking, 'VP')
-
-print("\nFrases preposicionales (PP):")
-mostrar_chunks(resultado_chunking, 'PP')
-
-print("\nFrases adjetivales (ADJP):")
-mostrar_chunks(resultado_chunking, 'ADJP')
-
-print("\nFrases adverbiales (ADVP):")
-mostrar_chunks(resultado_chunking, 'ADVP')
-
-# Identificación de entidades nombradas
-entidades_nombradas = ne_chunk(etiquetas_pos)
-
+# Mostrar las entidades nombradas
 print("\nEntidades nombradas:")
-for subtree in entidades_nombradas:
-    if hasattr(subtree, 'label'):
-        entidad = ' '.join(c[0] for c in subtree)
-        etiqueta = subtree.label()
-        print(f'{entidad} ({etiqueta})')
+print(ner_chunks)
 
-# Dibujar el árbol resultante del reconocimiento de entidades nombradas (opcional)
-entidades_nombradas.draw()
+# Visualización de las entidades nombradas
+ner_chunks.draw()
